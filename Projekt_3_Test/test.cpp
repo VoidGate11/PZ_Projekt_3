@@ -1,8 +1,13 @@
+/**
+ * @file test.cpp
+ * @brief Zestaw testow jednostkowych Google Test dla szablonowej klasy MergeSort.
+ */
+
 #include "pch.h"
 #include "gtest/gtest.h"
 #include "MergeSort.h"
 
-// 1. Tablica juz posortowana rosnaco
+ /** @brief Sprawdza zachowanie algorytmu dla tablicy juz posortowanej rosnaco. */
 TEST(MergeSortTest, TablicaRosnaco)
 {
     int tablica[] = { 1, 2, 3, 4, 5 };
@@ -15,7 +20,7 @@ TEST(MergeSortTest, TablicaRosnaco)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 2. Tablica posortowana malejaco
+/** @brief Sprawdza sortowanie tablicy uporzadkowanej w odwrotnej kolejnosci (malejaco). */
 TEST(MergeSortTest, TablicaMalejaco)
 {
     int tablica[] = { 9, 7, 5, 3, 1 };
@@ -28,7 +33,7 @@ TEST(MergeSortTest, TablicaMalejaco)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 3. Tablica losowa
+/** @brief Sprawdza sortowanie tablicy o losowym ulozeniu elementow. */
 TEST(MergeSortTest, TablicaLosowa)
 {
     int tablica[] = { 8, 3, 5, 1, 9, 2 };
@@ -41,7 +46,7 @@ TEST(MergeSortTest, TablicaLosowa)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 4. Tablica zawierajaca tylko liczby ujemne
+/** @brief Sprawdza sortowanie tablicy zawierajacej wylacznie liczby ujemne. */
 TEST(MergeSortTest, TylkoLiczbyUjemne)
 {
     int tablica[] = { -5, -1, -10, -3 };
@@ -54,7 +59,7 @@ TEST(MergeSortTest, TylkoLiczbyUjemne)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 5. Tablica z liczbami ujemnymi i dodatnimi
+/** @brief Sprawdza sortowanie tablicy z liczbami ujemnymi, zerem i dodatnimi. */
 TEST(MergeSortTest, LiczbyUjemneIDodatnie)
 {
     int tablica[] = { -3, 7, -1, 5, 0, -8 };
@@ -67,7 +72,7 @@ TEST(MergeSortTest, LiczbyUjemneIDodatnie)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 6. Pusta tablica
+/** @brief Sprawdza bezpieczna obsluge pustej tablicy bez rzucania wyjatku. */
 TEST(MergeSortTest, PustaTablica)
 {
     int* tablica = nullptr;
@@ -77,7 +82,7 @@ TEST(MergeSortTest, PustaTablica)
     EXPECT_NO_THROW(sortowanie.sort());
 }
 
-// 7. Tablica z jednym elementem
+/** @brief Sprawdza zachowanie algorytmu dla tablicy jednoelementowej. */
 TEST(MergeSortTest, JedenElement)
 {
     int tablica[] = { 42 };
@@ -88,7 +93,7 @@ TEST(MergeSortTest, JedenElement)
     EXPECT_EQ(tablica[0], 42);
 }
 
-// 8. Tablica zawierajaca duplikaty
+/** @brief Sprawdza sortowanie tablicy zawierajacej powtarzajace sie wartosci. */
 TEST(MergeSortTest, Duplikaty)
 {
     int tablica[] = { 4, 2, 4, 1, 2, 3 };
@@ -101,7 +106,7 @@ TEST(MergeSortTest, Duplikaty)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 9. Liczby ujemne z duplikatami
+/** @brief Sprawdza sortowanie liczb ujemnych z wystepujacymi duplikatami. */
 TEST(MergeSortTest, UjemneZDuplikatami)
 {
     int tablica[] = { -2, -5, -2, -1, -5 };
@@ -114,7 +119,7 @@ TEST(MergeSortTest, UjemneZDuplikatami)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 10. Liczby ujemne, dodatnie i duplikaty
+/** @brief Sprawdza sortowanie mieszanki liczb ujemnych, dodatnich i duplikatow. */
 TEST(MergeSortTest, UjemneDodatnieDuplikaty)
 {
     int tablica[] = { -3, 5, -3, 2, 5, -1, 2 };
@@ -127,7 +132,7 @@ TEST(MergeSortTest, UjemneDodatnieDuplikaty)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 11. Dwa elementy juz posortowane rosnaco
+/** @brief Sprawdza tablice dwuelementowa juz posortowana rosnaco. */
 TEST(MergeSortTest, DwaElementyRosnaco)
 {
     int tablica[] = { 2, 8 };
@@ -140,7 +145,7 @@ TEST(MergeSortTest, DwaElementyRosnaco)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 12. Duza tablica - wiecej niz 100 elementow
+/** @brief Sprawdza sortowanie duzej tablicy (150 elementow) w odwrotnej kolejnosci. */
 TEST(MergeSortTest, DuzaTablica)
 {
     int tablica[150];
@@ -159,8 +164,7 @@ TEST(MergeSortTest, DuzaTablica)
         EXPECT_EQ(tablica[i], oczekiwane[i]);
 }
 
-// 13. Duza tablica z liczbami ujemnymi,
-// dodatnimi i duplikatami
+/** @brief Sprawdza sortowanie duzej tablicy (200 elementow) z liczbami ujemnymi, dodatnimi i duplikatami. */
 TEST(MergeSortTest, DuzaTablicaZDuplikatami)
 {
     int tablica[200];

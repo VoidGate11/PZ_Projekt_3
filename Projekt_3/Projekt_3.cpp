@@ -1,8 +1,21 @@
-﻿#include <iostream>
+﻿/**
+ * @file Projekt_3.cpp
+ * @brief Program glowny demonstrujacy dzialanie szablonu MergeSort dla typow int i double.
+ */
+
+#include <iostream>
 #include "MergeSort.h"
 
 using namespace std;
 
+/**
+ * @brief Glowna funkcja programu uruchamiajaca sortowanie przykladowych tablic.
+ *
+ * Tworzy dwie tablice roznych typow (int oraz double), uruchamia dla nich
+ * sortowanie przez scalanie za pomoca klasy MergeSort<T> i wypisuje wyniki.
+ *
+ * @return Kod wyjscia programu (0 oznacza poprawne zakonczenie).
+ */
 int main()
 {
     int tablicaInt[] = { 8, 3, 5, 1, 9, 2 };
