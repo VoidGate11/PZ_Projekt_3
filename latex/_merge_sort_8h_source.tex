@@ -1,0 +1,90 @@
+\doxysection{Merge\+Sort.\+h}
+\hypertarget{_merge_sort_8h_source}{}\label{_merge_sort_8h_source}\index{Projekt\_3/MergeSort.h@{Projekt\_3/MergeSort.h}}
+\doxymbox{\hyperlink{_merge_sort_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_merge_sort_acfd0c1eb9d1a1f539598d6a98f9b7b99}{MergeSort}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ T*\ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_merge_sort_a11f370368990a546e11e6c5a1b75b743}{rozmiar}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38}{mergeSort}}(\textcolor{keywordtype}{int}\ lewy,\ \textcolor{keywordtype}{int}\ prawy)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lewy\ <\ prawy)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ srodek\ =\ (lewy\ +\ prawy)\ /\ 2;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38}{mergeSort}}(lewy,\ srodek);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38}{mergeSort}}(srodek\ +\ 1,\ prawy);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a22471e9b84cee58b93e2c6117b4fc038}{merge}}(lewy,\ srodek,\ prawy);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_a22471e9b84cee58b93e2c6117b4fc038}{merge}}(\textcolor{keywordtype}{int}\ lewy,\ \textcolor{keywordtype}{int}\ srodek,\ \textcolor{keywordtype}{int}\ prawy)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rozmiarPomocniczy\ =\ prawy\ -\/\ lewy\ +\ 1;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ T*\ pomocnicza\ =\ \textcolor{keyword}{new}\ T[rozmiarPomocniczy];}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ lewy;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ srodek\ +\ 1;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <=\ srodek\ \&\&\ j\ <=\ prawy)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[i]\ <=\ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[j])}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pomocnicza[k]\ =\ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[i];}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pomocnicza[k]\ =\ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[j];}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <=\ srodek)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ pomocnicza[k]\ =\ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[i];}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ <=\ prawy)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ pomocnicza[k]\ =\ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[j];}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rozmiarPomocniczy;\ i++)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}[lewy\ +\ i]\ =\ pomocnicza[i];}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ pomocnicza;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00110\ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_acfd0c1eb9d1a1f539598d6a98f9b7b99}{MergeSort}}(T*\ tab,\ \textcolor{keywordtype}{int}\ n)}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}\ =\ tab;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a11f370368990a546e11e6c5a1b75b743}{rozmiar}}\ =\ n;}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_merge_sort_aef65de48351d4044b6414c14a01ff6e0}{sort}}()}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38}{mergeSort}}(0,\ \doxymbox{\hyperlink{class_merge_sort_a11f370368990a546e11e6c5a1b75b743}{rozmiar}}\ -\/\ 1);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \};}
+
+\end{DoxyCode}

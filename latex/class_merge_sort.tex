@@ -1,0 +1,157 @@
+\doxysection{Merge\+Sort\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_merge_sort}{}\label{class_merge_sort}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+
+
+Szablonowa klasa sortujaca tablice metoda dziel i zwyciezaj (Merge Sort).  
+
+
+
+
+{\ttfamily \+\#include $<$Merge\+Sort.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_merge_sort_acfd0c1eb9d1a1f539598d6a98f9b7b99}{Merge\+Sort}} (T \texorpdfstring{$\ast$}{*}tab, int n)
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjalizujacy obiekt sortujacy. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_merge_sort_aef65de48351d4044b6414c14a01ff6e0}{sort}} ()
+\begin{DoxyCompactList}\small\item\em Uruchamia sortowanie calej tablicy w kolejnosci rosnacej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38}{merge\+Sort}} (int lewy, int prawy)
+\begin{DoxyCompactList}\small\item\em Rekurencyjnie dzieli wskazany zakres tablicy na mniejsze czesci i scala je. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_merge_sort_a22471e9b84cee58b93e2c6117b4fc038}{merge}} (int lewy, int srodek, int prawy)
+\begin{DoxyCompactList}\small\item\em Scala dwie sasiednie, posortowane juz podtablice w jeden uporzadkowany fragment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}{tablica}}
+\begin{DoxyCompactList}\small\item\em Wskaznik na sortowana tablice elementow. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_merge_sort_a11f370368990a546e11e6c5a1b75b743}{rozmiar}}
+\begin{DoxyCompactList}\small\item\em Liczba elementow w sortowanej tablicy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Merge\+Sort$<$ T $>$}
+Szablonowa klasa sortujaca tablice metoda dziel i zwyciezaj (Merge Sort). 
+
+Klasa pozwala na sortowanie tablic dowolnego typu liczbowego (np. int, long int, float, double), o ile typ ten wspiera operatory porownania (\texorpdfstring{$<$}{<}=) oraz przypisania (=).
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Typ elementow przechowywanych w sortowanej tablicy. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{class_merge_sort_doc-constructors}
+\Hypertarget{class_merge_sort_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_merge_sort_acfd0c1eb9d1a1f539598d6a98f9b7b99}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}!MergeSort@{MergeSort}}
+\index{MergeSort@{MergeSort}!MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MergeSort()}{MergeSort()}}
+{\footnotesize\ttfamily \label{class_merge_sort_acfd0c1eb9d1a1f539598d6a98f9b7b99} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_merge_sort}{Merge\+Sort}}$<$ T $>$::\+\+Merge\+Sort (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{tab}{, }\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor inicjalizujacy obiekt sortujacy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & Wskaznik na tablice przeznaczona do posortowania. \\
+\hline
+{\em n} & Liczba elementow w tablicy. \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_merge_sort_doc-func-members}
+\Hypertarget{class_merge_sort_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_merge_sort_a22471e9b84cee58b93e2c6117b4fc038}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}!merge@{merge}}
+\index{merge@{merge}!MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily \label{class_merge_sort_a22471e9b84cee58b93e2c6117b4fc038} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_merge_sort}{Merge\+Sort}}$<$ T $>$::\+merge (\begin{DoxyParamCaption}\item[{int}]{lewy}{, }\item[{int}]{srodek}{, }\item[{int}]{prawy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Scala dwie sasiednie, posortowane juz podtablice w jeden uporzadkowany fragment. 
+
+Wykorzystuje tymczasowa tablice alokowana dynamicznie, a po przepisaniu elementow z powrotem do tablicy docelowej zwalnia zajeta pamiec.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lewy} & Indeks poczatkowy lewej podtablicy. \\
+\hline
+{\em srodek} & Indeks koncowy lewej podtablicy (prawa zaczyna sie od srodek + 1). \\
+\hline
+{\em prawy} & Indeks koncowy prawej podtablicy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}!mergeSort@{mergeSort}}
+\index{mergeSort@{mergeSort}!MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mergeSort()}{mergeSort()}}
+{\footnotesize\ttfamily \label{class_merge_sort_a2086ef792654b0c26ce5e82f67c34b38} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_merge_sort}{Merge\+Sort}}$<$ T $>$::\+merge\+Sort (\begin{DoxyParamCaption}\item[{int}]{lewy}{, }\item[{int}]{prawy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Rekurencyjnie dzieli wskazany zakres tablicy na mniejsze czesci i scala je. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lewy} & Indeks poczatkowy aktualnie przetwarzanego zakresu. \\
+\hline
+{\em prawy} & Indeks koncowy aktualnie przetwarzanego zakresu. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_merge_sort_aef65de48351d4044b6414c14a01ff6e0}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}!sort@{sort}}
+\index{sort@{sort}!MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily \label{class_merge_sort_aef65de48351d4044b6414c14a01ff6e0} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_merge_sort}{Merge\+Sort}}$<$ T $>$::\+sort (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Uruchamia sortowanie calej tablicy w kolejnosci rosnacej. 
+
+Dla tablic pustych (rozmiar \texorpdfstring{$<$}{<}= 0) lub jednoelementowych bezpiecznie konczy dzialanie bez modyfikacji danych. 
+
+\label{class_merge_sort_doc-variable-members}
+\Hypertarget{class_merge_sort_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_merge_sort_a11f370368990a546e11e6c5a1b75b743}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}!rozmiar@{rozmiar}}
+\index{rozmiar@{rozmiar}!MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rozmiar}{rozmiar}}
+{\footnotesize\ttfamily \label{class_merge_sort_a11f370368990a546e11e6c5a1b75b743} 
+template$<$typename T$>$ \\
+int \doxymbox{\hyperlink{class_merge_sort}{Merge\+Sort}}$<$ T $>$::\+rozmiar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liczba elementow w sortowanej tablicy. 
+
+\Hypertarget{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b}\index{MergeSort$<$ T $>$@{MergeSort$<$ T $>$}!tablica@{tablica}}
+\index{tablica@{tablica}!MergeSort$<$ T $>$@{MergeSort$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tablica}{tablica}}
+{\footnotesize\ttfamily \label{class_merge_sort_a3593c9149bef04c2d36164c86bfd441b} 
+template$<$typename T$>$ \\
+T\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_merge_sort}{Merge\+Sort}}$<$ T $>$::\+tablica\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wskaznik na sortowana tablice elementow. 
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Projekt\+\_\+3/\doxymbox{\hyperlink{_merge_sort_8h}{Merge\+Sort.\+h}}\end{DoxyCompactItemize}
